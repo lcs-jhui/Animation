@@ -58,21 +58,23 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+canvas.fillColor = .white
+canvas.borderColor = .black
+canvas.drawShapesWithBorders = true
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+// Draw panda's head
+canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
 
-// Go back to origin
-p.goToOrigin()
+//draw right eye
+canvas.drawEllipse(at: Point(x: 20, y: 10), width: 20, height: 40)
+canvas.drawEllipse(at: Point(x: 20, y: 10), width: 20, height: 10)
 
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
-
+//draw left eye
+canvas.drawEllipse(at: Point(x: -20, y: 10), width: 20, height: 40)
+canvas.drawEllipse(at: Point(x: -20, y: 10), width: 20, height: 10)
+//draw nose
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 0, y: -20), width: 15, height: 15)
 /*:
  ## Show the Live View
  Don't see any results?
