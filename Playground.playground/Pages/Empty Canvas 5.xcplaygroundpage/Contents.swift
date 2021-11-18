@@ -1,3 +1,4 @@
+
 //: [Previous](@previous) / [Next](@next)
 /*:
 ## Canvas size
@@ -53,25 +54,57 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  Beginning on line 61, you can add your own code.
   
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
  */
 
 // Begin writing your code below (you can remove the examples shown)
+// GOAL: Draw a panda's face
+// Draw right ear
+canvas.drawEllipse(at: Point(x: 35, y: 50), width: 40, height: 40)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// Draw left ear
+canvas.drawEllipse(at: Point(x: -35, y: 50), width: 40, height: 40)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+// Set canvas characteristics for shapes drawn below this line
+canvas.drawShapesWithBorders = true
+canvas.fillColor = .white
 
-// Go back to origin
-p.goToOrigin()
+// Draw panda's head
+canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
 
-// Change the pen color
-p.penColor = .red
+// Set canvas characteristics for shapes drawn below this line
+canvas.fillColor = .white
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+// Draw right eyeball
+canvas.drawEllipse(at: Point(x: 15, y: 15), width: 15, height: 25)
+
+// Draw left eyeball
+canvas.drawEllipse(at: Point(x: -15, y: 15), width: 15, height: 25)
+
+// Set canvas characteristics for shapes drawn below this line
+canvas.fillColor = .black
+
+// Draw right pupil
+canvas.drawEllipse(at: Point(x: 15, y: 8), width: 10, height: 10)
+
+// Draw left pupil
+canvas.drawEllipse(at: Point(x: -15, y: 8), width: 10, height: 10)
+
+// Set canvas characteristics for shapes drawn below this line
+canvas.fillColor = .black
+
+// Draw mouth
+canvas.drawEllipse(at: Point(x: 0, y: -30), width: 40, height: 20)
+
+// Cover upper half of mouth so it looks more like... a mouth
+canvas.fillColor = .white
+canvas.drawShapesWithBorders = false
+canvas.drawRectangle(at: Point(x: 0, y: -20), width: 50, height: 20, anchoredBy: .centre)
+
+// Draw nose
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 0, y: -15), width: 15, height: 15)
+
+
 
 /*:
  ## Show the Live View
@@ -80,7 +113,6 @@ p.addArc(radius: 50, angle: -45)
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  

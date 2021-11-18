@@ -58,23 +58,55 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-canvas.fillColor = .white
-canvas.borderColor = .black
+
+// Draw right ear
+canvas.drawEllipse(at: Point(x: 35, y: 50), width: 40, height: 40)
+
+// Draw left ear
+canvas.drawEllipse(at: Point(x: -35, y: 50), width: 40, height: 40)
+
+// Set canvas characteristics for shapes drawn below this line
 canvas.drawShapesWithBorders = true
+canvas.fillColor = .white
 
 // Draw panda's head
 canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
 
-//draw right eye
-canvas.drawEllipse(at: Point(x: 20, y: 10), width: 20, height: 40)
-canvas.drawEllipse(at: Point(x: 20, y: 10), width: 20, height: 10)
+// Set canvas characteristics for shapes drawn below this line
+canvas.fillColor = .white
 
-//draw left eye
-canvas.drawEllipse(at: Point(x: -20, y: 10), width: 20, height: 40)
-canvas.drawEllipse(at: Point(x: -20, y: 10), width: 20, height: 10)
-//draw nose
+// Draw right eyeball
+canvas.drawEllipse(at: Point(x: 15, y: 15), width: 15, height: 25)
+
+// Draw left eyeball
+canvas.drawEllipse(at: Point(x: -15, y: 15), width: 15, height: 25)
+
+// Set canvas characteristics for shapes drawn below this line
 canvas.fillColor = .black
-canvas.drawEllipse(at: Point(x: 0, y: -20), width: 15, height: 15)
+
+// Draw right pupil
+canvas.drawEllipse(at: Point(x: 15, y: 8), width: 10, height: 10)
+
+// Draw left pupil
+canvas.drawEllipse(at: Point(x: -15, y: 8), width: 10, height: 10)
+
+// Set canvas characteristics for shapes drawn below this line
+canvas.fillColor = .black
+
+// Draw mouth
+canvas.drawEllipse(at: Point(x: 0, y: -30), width: 40, height: 20)
+
+// Cover upper half of mouth so it looks more like... a mouth
+canvas.fillColor = .white
+canvas.drawShapesWithBorders = false
+canvas.drawRectangle(at: Point(x: 0, y: -20), width: 50, height: 20, anchoredBy: .centre)
+
+// Draw nose
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 0, y: -15), width: 15, height: 15)
+
+// Background colour
+
 /*:
  ## Show the Live View
  Don't see any results?
