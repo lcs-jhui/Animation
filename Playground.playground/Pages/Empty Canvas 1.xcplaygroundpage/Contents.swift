@@ -16,6 +16,7 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import AppKit
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -58,8 +59,15 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
+// Background colour
+
+canvas.fillColor = Color(hue: 140, saturation: 75, brightness: 50, alpha: 100)
+canvas.drawRectangle(at: Point(x: -300, y: -300), width: 900, height: 900)
+
 
 // Draw right ear
+canvas.drawShapesWithBorders = true
+canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: 35, y: 50), width: 40, height: 40)
 
 // Draw left ear
@@ -105,7 +113,6 @@ canvas.drawRectangle(at: Point(x: 0, y: -20), width: 50, height: 20, anchoredBy:
 canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: 0, y: -15), width: 15, height: 15)
 
-// Background colour
 
 /*:
  ## Show the Live View
