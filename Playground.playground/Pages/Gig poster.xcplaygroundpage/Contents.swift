@@ -4,7 +4,7 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -56,82 +56,72 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  */
 // Begin writing your code below (you can remove the examples shown)
 
+canvas.highPerformance = true
+
 
 canvas.fillColor = Color(hue: 140, saturation: 75, brightness: 0, alpha: 100)
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 600, height: 600)
 
 
-for verticalPosition in stride(from: 0, through: 600, by: 50){
+
+for verticalPosition in stride(from: 0, through: 400, by: 40){
     
-    for horizontalPosition in stride(from: 0, through: 600, by: 50){
+    for horizontalPosition in stride(from: 0, through: 400, by: 40){
         
-        canvas.fillColor = Color(hue: 120, saturation: 70, brightness: 75, alpha: 100)
-        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 47, height: 47)
+    
+            
+      
+        if horizontalPosition == 0 ||
+        horizontalPosition == 400 ||
+        verticalPosition == 0 ||
+        verticalPosition == 400 ||
+            horizontalPosition + verticalPosition > 400
+        {
+            
+            canvas.fillColor = Color(hue: 99, saturation: 54, brightness: 72, alpha: 100)
+        } else {
+            canvas.fillColor = Color(hue: 84, saturation: 4, brightness: 88, alpha: 100)
+        }
         
+        
+        // draw the circle
+        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 37, height: 37)
+        //canvas.drawText(message: "(\(horizontalPosition), \(verticalPosition))", at: Point(x: horizontalPosition - 20, y: verticalPosition), size: 9)
     }
 }
 
-canvas.fillColor = .white
-
-for horizontalTrianglePosition in stride(from: 50, through: 450, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition, y: 50), width: 47, height: 47)
-    
-}
-
-for horizontalTrianglePosition2 in stride(from: 50, through: 400, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition2, y: 100), width: 47, height: 47)
-    
-}
-
-for horizontalTrianglePosition3 in stride(from: 50, through: 350, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition3, y: 150), width: 47, height: 47)
-    
-}
-
-for horizontalTrianglePosition4 in stride(from: 50, through: 300, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition4, y: 200), width: 47, height: 47)
-    
-}
-
-for horizontalTrianglePosition5 in stride(from: 50, through: 250, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition5, y: 250), width: 47, height: 47)
-    
-}
-
-for horizontalTrianglePosition6 in stride(from: 50, through: 200, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition6, y: 300), width: 47, height: 47)
-    
-}
+canvas.fillColor = Color(hue: 99, saturation: 54, brightness: 72, alpha: 100)
+canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
 
-for horizontalTrianglePosition7 in stride(from: 50, through: 150, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition7, y: 350), width: 47, height: 47)
-    
-}
+canvas.drawText(message: "pixies", at: Point(x: 15, y: 410), size: 70, kerning: 0)
 
-for horizontalTrianglePosition8 in stride(from: 50, through: 100, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition8, y: 400), width: 47, height: 47)
-    
-}
+canvas.textColor = .white
 
-for horizontalTrianglePosition9 in stride(from: 50, through: 50, by: 50){
-    
-    canvas.drawEllipse(at: Point(x: horizontalTrianglePosition9, y: 450), width: 47, height: 47)
-    
-}
+canvas.drawText(message: "with", at: Point(x: 275, y: 450), size: 15, kerning: 0)
+
+canvas.drawText(message: "throwing muses", at: Point(x: 275, y: 435), size: 15, kerning: 0)
+
+canvas.drawText(message: "big dipper", at: Point(x: 275, y: 420), size: 15, kerning: 0)
+
+canvas.textColor = .black
+
+canvas.drawText(message: "saturday", at: Point(x: 10, y: 555), size: 12, kerning: 0)
+
+canvas.drawText(message: "december 13 1986", at: Point(x: 10, y: 535), size: 12, kerning: 0)
+
+canvas.drawText(message: "9 pm over 21", at: Point(x: 10, y: 515), size: 12, kerning: 0)
+
+canvas.drawText(message: "at the rat", at: Point(x: 280, y: 552), size: 12, kerning: 0)
+
+canvas.drawText(message: "528 commonwealth", at: Point(x: 280, y: 532), size: 12, kerning: 0)
+
+canvas.drawText(message: "boston, mass.", at: Point(x: 280, y: 512), size: 12, kerning: 0)
 
 
+canvas.highPerformance = false
 
-
-//canvas.drawAxes(withScale: true, by: 50, color: .black)
+//canvas.drawAxes(withScale: true, by: 50, color: .white)
 
 
 /*:
@@ -149,3 +139,5 @@ for horizontalTrianglePosition9 in stride(from: 50, through: 50, by: 50){
  
  ![source_control](source-control.png "Source Control")
  */
+
+
