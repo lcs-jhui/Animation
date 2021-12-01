@@ -1,4 +1,3 @@
-
 //: [Previous](@previous) / [Next](@next)
 /*:
 ## Canvas size
@@ -42,11 +41,11 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+canvas.translate(to: Point(x: 100,
+                           y: 100))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -54,55 +53,24 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  Beginning on line 61, you can add your own code.
   
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
+
  */
 
 // Begin writing your code below (you can remove the examples shown)
-// GOAL: Draw a panda's face
-// Draw right ear
-canvas.drawEllipse(at: Point(x: 35, y: 50), width: 40, height: 40)
 
-// Draw left ear
-canvas.drawEllipse(at: Point(x: -35, y: 50), width: 40, height: 40)
+for verticalPosition in stride(from: 25, through: 475, by: 50){
+    
+    for horizontalPosition in stride(from: 25, through: 475, by: 50){
+        
+        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 50, height: 50)
+        
+    }
+    
+    
+    
+    
+}
 
-// Set canvas characteristics for shapes drawn below this line
-canvas.drawShapesWithBorders = true
-canvas.fillColor = .white
-
-// Draw panda's head
-canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
-
-// Set canvas characteristics for shapes drawn below this line
-canvas.fillColor = .white
-
-// Draw right eyeball
-canvas.drawEllipse(at: Point(x: 15, y: 15), width: 15, height: 25)
-
-// Draw left eyeball
-canvas.drawEllipse(at: Point(x: -15, y: 15), width: 15, height: 25)
-
-// Set canvas characteristics for shapes drawn below this line
-canvas.fillColor = .black
-
-// Draw right pupil
-canvas.drawEllipse(at: Point(x: 15, y: 8), width: 10, height: 10)
-
-// Draw left pupil
-canvas.drawEllipse(at: Point(x: -15, y: 8), width: 10, height: 10)
-
-// Set canvas characteristics for shapes drawn below this line
-canvas.fillColor = .black
-
-// Draw mouth
-canvas.drawEllipse(at: Point(x: 0, y: -30), width: 40, height: 20)
-
-// Cover upper half of mouth so it looks more like... a mouth
-canvas.fillColor = .white
-canvas.drawShapesWithBorders = false
-canvas.drawRectangle(at: Point(x: 0, y: -20), width: 50, height: 20, anchoredBy: .centre)
-
-// Draw nose
-canvas.fillColor = .black
-canvas.drawEllipse(at: Point(x: 0, y: -15), width: 15, height: 15)
 
 
 
@@ -113,6 +81,7 @@ canvas.drawEllipse(at: Point(x: 0, y: -15), width: 15, height: 15)
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
+
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  

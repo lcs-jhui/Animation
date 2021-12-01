@@ -57,7 +57,9 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 
-// Begin writing your code below (you can remove the examples shown)
+// High performance mode
+//canvas.highPerformance = true
+
 
 // Background colour
 
@@ -113,6 +115,9 @@ canvas.drawRectangle(at: Point(x: 0, y: -20), width: 50, height: 20, anchoredBy:
 canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: 0, y: -15), width: 15, height: 15)
 
+
+// High performance mode off
+//canvas.highPerformance = false
 
 /*:
  ## Show the Live View

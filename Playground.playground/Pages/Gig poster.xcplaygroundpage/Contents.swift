@@ -59,18 +59,18 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 canvas.highPerformance = true
 
 
+//background color black
 canvas.fillColor = Color(hue: 140, saturation: 75, brightness: 0, alpha: 100)
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 600, height: 600)
 
 
-
+//create loops for x and y position
 for verticalPosition in stride(from: 0, through: 400, by: 40){
     
     for horizontalPosition in stride(from: 0, through: 400, by: 40){
         
-    
-            
-      
+        //if these conditions apply, then the circles would be green
+        //if not, then the colors would be white
         if horizontalPosition == 0 ||
         horizontalPosition == 400 ||
         verticalPosition == 0 ||
@@ -90,10 +90,11 @@ for verticalPosition in stride(from: 0, through: 400, by: 40){
     }
 }
 
+//creates a green rectangle on top to overlay the circles
 canvas.fillColor = Color(hue: 99, saturation: 54, brightness: 72, alpha: 100)
 canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
-
+//texts for the poster
 canvas.drawText(message: "pixies", at: Point(x: 15, y: 410), size: 70, kerning: 0)
 
 canvas.textColor = .white
@@ -121,6 +122,7 @@ canvas.drawText(message: "boston, mass.", at: Point(x: 280, y: 512), size: 12, k
 
 canvas.highPerformance = false
 
+//create axes on the canvas
 //canvas.drawAxes(withScale: true, by: 50, color: .white)
 
 
