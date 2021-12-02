@@ -52,6 +52,20 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+//add the ability to draw a tilted rectangle to canvas structure
+extension Canvas {
+    func drawTiltedRectangle(xPosition: Int, yPosition: Int) {
+        var rectanglVertices: [Point] = []
+        rectanglVertices.append(Point(x: xPosition+0, y: yPosition+30))
+        rectanglVertices.append(Point(x: xPosition+20, y: yPosition+50))
+        rectanglVertices.append(Point(x: xPosition+50, y: yPosition+20))
+        rectanglVertices.append(Point(x: xPosition+30, y: yPosition+0))
+
+        //draw tilted rectangle
+        canvas.drawCustomShape(with: rectanglVertices)
+    }
+}
+
 
 
 //custom shape with absolute coordiantes
@@ -71,15 +85,9 @@ for xPosition in stride(from: 0, through: 350, by: 50){
         canvas.fillColor = .red
         canvas.drawEllipse(at: Point(x: xPosition, y: yPosition), width: 5, height: 5)
         
-        //tell canvas coordinates for tilted rectangle
-        var rectanglVertices: [Point] = []
-        rectanglVertices.append(Point(x: xPosition+0, y: yPosition+30))
-        rectanglVertices.append(Point(x: xPosition+20, y: yPosition+50))
-        rectanglVertices.append(Point(x: xPosition+50, y: yPosition+20))
-        rectanglVertices.append(Point(x: xPosition+30, y: yPosition+0))
-
-        //draw tilted rectangle
-        canvas.drawCustomShape(with: rectanglVertices)
+        canvas.fillColor = .blue
+        canvas.drawTiltedRectangle(xPosition: xPosition, yPosition: yPosition)
+        
         
     }
 }
