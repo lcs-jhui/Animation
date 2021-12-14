@@ -52,8 +52,13 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+//add a background color
+
 canvas.fillColor = Color(hue: 53, saturation: 17, brightness: 96, alpha: 100)
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+
+//create traingles with different colours
+
 for x in stride(from: 0, through: 400, by: 100){
     
     for y in stride(from: 0, through: 600, by: 100){
@@ -78,6 +83,7 @@ for x in stride(from: 0, through: 400, by: 100){
     }
 }
 
+//create white circles
 for xPosition in stride(from: 50, through: 400, by: 100){
     
     for yPosition in stride(from: 50, through: 600, by: 100){
@@ -89,7 +95,7 @@ for xPosition in stride(from: 50, through: 400, by: 100){
     }
 }
 
-
+//create half circles to overlap the white circles
 for xValue in stride(from: 0, through: 400, by: 100){
     
     for yValue in stride(from: 0, through: 600, by: 100){
@@ -115,6 +121,26 @@ for xValue in stride(from: 0, through: 400, by: 100){
     }
 }
 
-canvas.fillColor = Color(hue: 53, saturation: 17, brightness: 96, alpha: 100)
+//added a rectangle at the top
+canvas.fillColor = Color(hue: 53, saturation: 17, brightness: 80, alpha: 100)
 canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
+
+
+//add text on the poster
+canvas.drawText(message: "the beatles", at: Point(x: 10, y: 410), size: 50, kerning: 0)
+
+canvas.drawText(message: "at the", at: Point(x: 10, y: 562), size: 15, kerning: 0)
+
+canvas.drawText(message: "royal hall", at: Point(x: 10, y: 550), size: 13, kerning: 0)
+
+canvas.drawText(message: "8pm to 1am", at: Point(x: 150, y: 562), size: 13, kerning: 0)
+
+canvas.drawText(message: "tickets", at: Point(x: 150, y: 550), size: 13, kerning: 0)
+
+canvas.drawText(message: "friday", at: Point(x: 300, y: 562), size: 13, kerning: 0)
+
+canvas.drawText(message: "march 8", at: Point(x: 300, y: 550), size: 13, kerning: 0)
+
+
+
 
